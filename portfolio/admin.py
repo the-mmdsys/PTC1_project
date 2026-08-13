@@ -14,6 +14,7 @@ class CategoryAdmin(TranslationAdmin):
     list_editable = ('active_status', 'order') 
     list_filter = ('active_status',)
     search_fields = ('title',)
+    list_per_page = 20
 
 @admin.register(Project)
 class ProjectAdmin(TranslationAdmin):
