@@ -1,0 +1,7 @@
+Django>=4.2
+djangorestframework>=3.14
+django-modeltranslation>=0.18
+drf-spectacular>=0.26
+Pillow>=10.0
+django-cors-headers>=4.2
+psycopg2-binary>=2.9
