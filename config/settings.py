@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'blog',
     'crm',
     'portfolio',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
