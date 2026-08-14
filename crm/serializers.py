@@ -11,7 +11,7 @@ class OrderRequestSerializer(serializers.ModelSerializer):
             'activity_area',
             'email',
             'phone_number',
-            'description',
+            'massage',
             'video_file',
         )
 

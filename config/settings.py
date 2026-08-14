@@ -37,6 +37,7 @@ AUTH_USER_MODEL = 'portfolio.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_spectacular',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -148,3 +149,15 @@ LANGUAGES = (
 )
 
 USE_I18N = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'PTC Maket API',
+    'DESCRIPTION': 'Docs For PTC project',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
