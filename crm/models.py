@@ -8,7 +8,7 @@ class OrderRequest(models.Model):
     activity_area = models.CharField(max_length=100, blank=True, null=True, verbose_name="Activity Area")
     email         = models.EmailField(verbose_name="Email")
     phone_number  = models.CharField(max_length=20, verbose_name="Phone Number") 
-    description   = models.TextField(verbose_name="Order Description")
+    massage          = models.TextField(verbose_name="Order Description")
     video_file    = models.FileField(
         upload_to ='order_requests/videos/',
         blank=True,

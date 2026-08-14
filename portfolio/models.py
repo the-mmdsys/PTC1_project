@@ -23,6 +23,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100, verbose_name="Project Title")
     slug = models.SlugField(max_length=100, unique=True, allow_unicode=True, verbose_name="Slug (URL)")
     description = models.TextField(verbose_name="Description")
+    cover_image = models.ImageField(upload_to='project_images/covers/', blank=True, null=True, verbose_name="Cover Image")
     
     category = models.ForeignKey(
         Category,
@@ -30,8 +31,6 @@ class Project(models.Model):
         related_name="projects",
         verbose_name="Category"
     )
-    
-    cover_image = models.ImageField(upload_to='project_images/covers/', blank=True, null=True, verbose_name="Cover Image")
 
     created_by = models.ForeignKey(
         CustomUser, 
