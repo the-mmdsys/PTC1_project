@@ -9,6 +9,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')), 
     path('api/portfolio/', include('portfolio.api.urls')),
     path('api/blog/', include('blog.api.urls')),
     path('api/crm/', include('crm.api.urls')),

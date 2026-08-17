@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'crm',
     'portfolio',
     'rest_framework',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 INTERNAL_IPS = [
@@ -101,3 +103,5 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

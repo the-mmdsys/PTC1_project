@@ -2,14 +2,43 @@ from django.db import models
 from core.models import BaseModel
 from core.enums import ArticleStatus, CommentStatus
 from django.utils.translation import gettext_lazy as _
+from ckeditor_uploader.fields import RichTextUploadingField
 
+class Category(BaseModel):
+    title = models.CharField(max_length=200, verbose_name=_("Title"))
+    slug = models.SlugField(max_length=200, unique=True, verbose_name=_("Slug"))
+
+    class Meta:
+        verbose_name = _("Category")
+        verbose_name_plural = _("Categories")
+
+    def __str__(self):
+        return self.title
 
 class Article(BaseModel):
+    class Language(models.TextChoices):
+        PERSIAN = 'fa', _('Persian')
+        ENGLISH = 'en', _('English')
+        ARABIC = 'ar', _('Arabic')
+
     title       = models.CharField(max_length=200, verbose_name=_("Title"))
     slug        = models.SlugField(max_length=200, unique=True, verbose_name=_("Slug"))
-    category    = models.CharField(max_length=100, blank=True, null=True, verbose_name=_("Category"))
+    category    = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='articles',
+        verbose_name=_("Category")
+    )
+    language = models.CharField(
+        max_length=2,
+        choices=Language.choices,
+        default=Language.PERSIAN,
+        verbose_name=_("Language")
+    )
     cover_image = models.ImageField(upload_to='article_covers/', blank=True, null=True, verbose_name=_("Cover Image"))
-    content     = models.TextField(verbose_name=_("Content"))
+    content     = RichTextUploadingField(verbose_name=_("Content"))
     description = models.TextField(blank=True, null=True, verbose_name=_("Description"))
     summary     = models.TextField(blank=True, null=True, verbose_name=_("Summary"))
     
