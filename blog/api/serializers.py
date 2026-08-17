@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from core.serializers import DynamicFieldsModelSerializer
 from blog.models import Article, Comment
-from blog import selectors
+from blog.api import selectors
 
 
 class CommentSerializer(DynamicFieldsModelSerializer):

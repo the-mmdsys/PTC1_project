@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import CategorySerializer, ProjectSerializer
-from portfolio import selector
+from portfolio.api import selector
 
 class CategoryViewSet(viewsets.ModelViewSet):
     http_method_names = ['get']

@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import HistorySerializer, TeamMemberSerializer
-from about import selectors
+from about.api import selectors
 
 class HistoryViewSet(viewsets.ModelViewSet):
     http_method_names = ['get']  
