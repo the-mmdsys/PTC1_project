@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import FileExtensionValidator
+from django.core.validators import FileExtensionValidator, RegexValidator
 from core.models import BaseModel
 from core.enums import ReviewStatus, ReadStatus
 from django.utils.translation import gettext_lazy as _
@@ -9,7 +9,7 @@ class OrderRequest(BaseModel):
     company_name  = models.CharField(max_length=150, blank=True, null=True, verbose_name=_("Company Name"))
     activity_area = models.CharField(max_length=100, blank=True, null=True, verbose_name=_("Activity Area"))
     email         = models.EmailField(verbose_name=_("Email"))
-    phone_number  = models.CharField(max_length=20, verbose_name=_("Phone Number")) 
+    phone_number  = models.CharField(max_length=20, verbose_name=_("Phone Number"), validators=[RegexValidator(regex=r'^\+?1?\d{9,15}$')]) 
     message       = models.TextField(verbose_name=_("Order Description"))
     
     

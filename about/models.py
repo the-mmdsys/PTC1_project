@@ -5,11 +5,12 @@ from core.models import BaseModel
 class History(BaseModel):
     title = models.CharField(max_length=100, verbose_name="Title")
     achievement = models.TextField(verbose_name=_("Achievement"))
-    date = models.DateField(verbose_name=_("Date"))
+    date = models.CharField(max_length=50, verbose_name="Year/Date")
 
     class Meta:
         verbose_name = _("History")
         verbose_name_plural = _("Histories")
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.title
