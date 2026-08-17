@@ -5,7 +5,7 @@ from core.models import BaseModel
 class History(BaseModel):
     title = models.CharField(max_length=100, verbose_name="Title")
     achievement = models.TextField(verbose_name=_("Achievement"))
-    date = models.CharField(max_length=50, verbose_name="Year/Date")
+    date = models.CharField(max_length=50, verbose_name="Year")
 
     class Meta:
         verbose_name = _("History")
@@ -19,7 +19,7 @@ class History(BaseModel):
 class TeamMember(BaseModel):
     full_name = models.CharField(max_length=100, verbose_name=_("Name"))
     position = models.CharField(max_length=100, verbose_name=_("Role"))
-    bio = models.TextField(verbose_name=_("Bio"))
+    bio = models.TextField(verbose_name=_("Bio"),blank=True, null=True,)
     image = models.ImageField(upload_to='team_profiles/', blank=True, null=True, verbose_name=_("Profile Image"))
 
     class Meta:

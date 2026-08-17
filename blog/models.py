@@ -1,19 +1,25 @@
 from django.db import models
-from core.models import BaseModel
+from core.models import BaseModel, OrderBaseModel
 from core.enums import ArticleStatus, CommentStatus
 from django.utils.translation import gettext_lazy as _
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.text import slugify
 
-class Category(BaseModel):
+class Category(OrderBaseModel):
     title = models.CharField(max_length=200, verbose_name=_("Title"))
-    slug = models.SlugField(max_length=200, unique=True, verbose_name=_("Slug"))
+    slug = models.SlugField(max_length=200, allow_unicode=True, unique=True, blank=True, verbose_name=_("Slug"))
 
-    class Meta:
+    class Meta(OrderBaseModel.Meta):
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
 
     def __str__(self):
         return self.title
+        
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title, allow_unicode=True)
+        super().save(*args, **kwargs)
 
 class Article(BaseModel):
     class Language(models.TextChoices):
@@ -22,7 +28,7 @@ class Article(BaseModel):
         ARABIC = 'ar', _('Arabic')
 
     title       = models.CharField(max_length=200, verbose_name=_("Title"))
-    slug        = models.SlugField(max_length=200, unique=True, verbose_name=_("Slug"))
+    slug        = models.SlugField(max_length=200, allow_unicode=True, unique=True, blank=True, verbose_name=_("Slug"))
     category    = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
@@ -55,6 +61,11 @@ class Article(BaseModel):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title, allow_unicode=True)
+        super().save(*args, **kwargs)
 
 
 class Comment(BaseModel):
