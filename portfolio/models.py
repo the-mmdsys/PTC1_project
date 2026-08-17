@@ -1,14 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from core.models import BaseModel, OrderBaseModel 
-from core.enums import ActiveStatus  
+from core.models import BaseModel, OrderBaseModel
+from core.enums import ActiveStatus
 from django.utils.translation import gettext_lazy as _
+from django.utils.text import slugify
 
 class CustomUser(AbstractUser):
     pass
 
 class Category(OrderBaseModel):
     title = models.CharField(max_length=100, verbose_name=_("Title"))
+    slug = models.SlugField(allow_unicode=True, unique=True, blank=True)
     
     active_status = models.CharField(
         max_length=20, 
@@ -25,11 +27,16 @@ class Category(OrderBaseModel):
 
     def __str__(self):
         return self.title
+        
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title, allow_unicode=True)
+        super().save(*args, **kwargs)
 
 
-class Project(BaseModel):
+class Project(OrderBaseModel):
     title = models.CharField(max_length=100, verbose_name="Project Title")
-    slug = models.SlugField(max_length=100, unique=True, allow_unicode=True, verbose_name="Slug (URL)")
+    slug = models.SlugField(max_length=100, unique=True, allow_unicode=True, blank=True, verbose_name="Slug (URL)")
     description = models.TextField(verbose_name="Description")
     cover_image = models.ImageField(upload_to='project_images/covers/', blank=True, null=True, verbose_name="Cover Image")
     
@@ -49,15 +56,20 @@ class Project(BaseModel):
         verbose_name=_("Created By")
     )
 
-    class Meta:
+    class Meta(OrderBaseModel.Meta):
         verbose_name = _("Project")
         verbose_name_plural = _("Projects")
 
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title, allow_unicode=True)
+        super().save(*args, **kwargs)
 
-class ProjectImage(BaseModel):
+
+class ProjectImage(OrderBaseModel):
     project = models.ForeignKey(
         Project,
         on_delete=models.CASCADE,
@@ -73,7 +85,7 @@ class ProjectImage(BaseModel):
         verbose_name=_("Active")
     )
 
-    class Meta:
+    class Meta(OrderBaseModel.Meta):
         verbose_name = _("Project Image")
         verbose_name_plural = _("Project Gallery")
 

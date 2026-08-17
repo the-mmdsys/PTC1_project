@@ -1,13 +1,20 @@
 from django.contrib import admin
+from .models import Article, Comment, Category
 from modeltranslation.admin import TranslationAdmin
-from .models import Article, Comment
+
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
+    list_display = ('title', 'slug')
+    search_fields = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(Article)
-class ArticleAdmin(TranslationAdmin):
-    list_display = ('title', 'category', 'status', 'created_at')
-    list_filter = ('status', 'created_at', 'category')
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'category', 'language', 'status', 'created_at')
+    list_filter = ('language', 'status', 'category')
     search_fields = ('title', 'content')
     prepopulated_fields = {'slug': ('title',)}
+    list_per_page = 20
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
@@ -15,3 +22,4 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('status', 'created_at')
     search_fields = ('full_name', 'text')
     list_editable = ('status',)
+    list_per_page = 20
