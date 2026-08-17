@@ -1,0 +1,15 @@
+from rest_framework import serializers
+from typing import Iterable, Any
+
+class DynamicFieldsModelSerializer(serializers.ModelSerializer):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        fields = kwargs.pop('fields', None)
+
+        super().__init__(*args, **kwargs)
+
+        if fields is not None:
+            allowed = set(fields)
+            existing = set(self.fields)
+
+            for field_name in existing - allowed:
+                self.fields.pop(field_name)

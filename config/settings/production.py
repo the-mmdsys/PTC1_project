@@ -1,7 +1,7 @@
 import os
-from .base import *
+from .base import * # noqa
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-production-secret-key-here')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'production secret key: 1234-test')
 
 DEBUG = False
 
