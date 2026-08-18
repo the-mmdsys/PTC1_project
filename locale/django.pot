@@ -20,259 +20,194 @@ msgstr ""
 
 #: .\about\apps.py:7 .\blog\apps.py:7 .\crm\apps.py:7
 msgid "Blog"
-msgstr ""
+msgstr "وبلاگ"
 
-#: .\about\models.py:10
 msgid "Achievement"
-msgstr ""
+msgstr "دستاورد"
 
-#: .\about\models.py:14
 msgid "History"
-msgstr ""
+msgstr "تاریخچه"
 
-#: .\about\models.py:15
 msgid "Histories"
-msgstr ""
+msgstr "تاریخچه‌ها"
 
-#: .\about\models.py:22
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
-#: .\about\models.py:23
 msgid "Role"
-msgstr ""
+msgstr "نقش"
 
-#: .\about\models.py:24
 msgid "Bio"
-msgstr ""
+msgstr "معرفی"
 
-#: .\about\models.py:25
 msgid "Profile Image"
-msgstr ""
+msgstr "تصویر پروفایل"
 
-#: .\about\models.py:28
 msgid "Team Member"
-msgstr ""
+msgstr "عضو تیم"
 
-#: .\about\models.py:29
 msgid "Team Members"
-msgstr ""
+msgstr "اعضای تیم"
 
-#: .\blog\models.py:9 .\blog\models.py:30 .\portfolio\models.py:12
 msgid "Title"
-msgstr ""
+msgstr "عنوان"
 
-#: .\blog\models.py:10 .\blog\models.py:31
 msgid "Slug"
-msgstr ""
+msgstr "اسلاگ"
 
-#: .\blog\models.py:13 .\blog\models.py:38 .\portfolio\models.py:25
 msgid "Category"
-msgstr ""
+msgstr "دسته‌بندی"
 
-#: .\blog\models.py:14 .\portfolio\models.py:26
 msgid "Categories"
-msgstr ""
+msgstr "دسته‌بندی‌ها"
 
-#: .\blog\models.py:26 .\config\settings\base.py:83
 msgid "Persian"
-msgstr ""
+msgstr "فارسی"
 
-#: .\blog\models.py:27 .\config\settings\base.py:82
 msgid "English"
-msgstr ""
+msgstr "انگلیسی"
 
-#: .\blog\models.py:28 .\config\settings\base.py:84
 msgid "Arabic"
-msgstr ""
+msgstr "عربی"
 
-#: .\blog\models.py:44
 msgid "Language"
-msgstr ""
+msgstr "زبان"
 
-#: .\blog\models.py:46
 msgid "Cover Image"
-msgstr ""
+msgstr "تصویر کاور"
 
-#: .\blog\models.py:47
 msgid "Content"
-msgstr ""
+msgstr "محتوا"
 
-#: .\blog\models.py:48
 msgid "Description"
-msgstr ""
+msgstr "توضیحات"
 
-#: .\blog\models.py:49
 msgid "Summary"
-msgstr ""
+msgstr "خلاصه"
 
-#: .\blog\models.py:55 .\blog\models.py:85
 msgid "Status"
-msgstr ""
+msgstr "وضعیت"
 
-#: .\blog\models.py:59 .\blog\models.py:76
 msgid "Article"
-msgstr ""
+msgstr "مقاله"
 
-#: .\blog\models.py:60
 msgid "Articles"
-msgstr ""
+msgstr "مقالات"
 
-#: .\blog\models.py:78 .\crm\models.py:8 .\crm\models.py:33
 msgid "Full Name"
-msgstr ""
+msgstr "نام و نام خانوادگی"
 
-#: .\blog\models.py:89
 msgid "Comment"
-msgstr ""
+msgstr "نظر"
 
-#: .\blog\models.py:90
 msgid "Comments"
-msgstr ""
+msgstr "نظرات"
 
-#: .\crm\models.py:9
 msgid "Company Name"
-msgstr ""
+msgstr "نام شرکت"
 
-#: .\crm\models.py:10
 msgid "Activity Area"
-msgstr ""
+msgstr "حوزه فعالیت"
 
-#: .\crm\models.py:11 .\crm\models.py:34
 msgid "Email"
-msgstr ""
+msgstr "ایمیل"
 
-#: .\crm\models.py:12
 msgid "Phone Number"
-msgstr ""
+msgstr "شماره تلفن"
 
-#: .\crm\models.py:13
 msgid "Order Description"
-msgstr ""
+msgstr "توضیحات سفارش"
 
-#: .\crm\models.py:21
 msgid "Review Status"
-msgstr ""
+msgstr "وضعیت بررسی"
 
-#: .\crm\models.py:25
 msgid "Order Request"
-msgstr ""
+msgstr "درخواست سفارش"
 
-#: .\crm\models.py:26
 msgid "Order Requests"
-msgstr ""
+msgstr "درخواست‌های سفارش"
 
-#: .\crm\models.py:35
 msgid "Subject"
-msgstr ""
+msgstr "موضوع"
 
-#: .\crm\models.py:36
 msgid "Message"
-msgstr ""
+msgstr "پیام"
 
-#: .\crm\models.py:42
 msgid "Read Status"
-msgstr ""
+msgstr "وضعیت خوانده شدن"
 
-#: .\crm\models.py:46
 msgid "Contact Message"
-msgstr ""
+msgstr "پیام تماس"
 
-#: .\crm\models.py:47
 msgid "Contact Messages"
-msgstr ""
+msgstr "پیام‌های تماس"
 
-#: .\portfolio\apps.py:8
 msgid "Portfolio"
-msgstr ""
+msgstr "نمونه‌کارها"
 
-#: .\portfolio\models.py:19
 msgid "Active Status"
-msgstr ""
+msgstr "وضعیت فعال"
 
-#: .\portfolio\models.py:22
 msgid "Logo"
-msgstr ""
+msgstr "لوگو"
 
-#: .\portfolio\models.py:56
 msgid "Created By"
-msgstr ""
+msgstr "ایجاد شده توسط"
 
-#: .\portfolio\models.py:60 .\portfolio\models.py:77
 msgid "Project"
-msgstr ""
+msgstr "پروژه"
 
-#: .\portfolio\models.py:61
 msgid "Projects"
-msgstr ""
+msgstr "پروژه‌ها"
 
-#: .\portfolio\models.py:79
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:423
 msgid "Image"
-msgstr ""
+msgstr "تصویر"
 
-#: .\portfolio\models.py:85
 msgid "Active"
-msgstr ""
+msgstr "فعال"
 
-#: .\portfolio\models.py:89
 msgid "Project Image"
-msgstr ""
+msgstr "تصویر پروژه"
 
-#: .\portfolio\models.py:90
 msgid "Project Gallery"
-msgstr ""
+msgstr "گالری پروژه"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"
-msgstr ""
+msgstr "جستجوی فایل‌ها"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
 msgid "Select an image to embed"
-msgstr ""
+msgstr "یک تصویر برای درج انتخاب کنید"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
 msgid "Browse for the image you want, then click 'Embed Image' to continue..."
-msgstr ""
+msgstr "تصویر موردنظر خود را پیدا کنید، سپس برای ادامه روی «درج تصویر» کلیک کنید..."
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
-msgid ""
-"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
-"tab."
-msgstr ""
+msgid "No images found. Upload images using the 'Image Button' dialog's 'Upload' tab."
+msgstr "هیچ تصویری پیدا نشد. با استفاده از تب «آپلود» در پنجره «دکمه تصویر»، تصاویر را آپلود کنید."
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
 msgid "Images in: "
-msgstr ""
+msgstr "تصاویر در: "
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
 msgid "Embed Image"
-msgstr ""
+msgstr "درج تصویر"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
 msgid "Play Slideshow"
-msgstr ""
+msgstr "پخش اسلایدشو"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
 msgid "Pause Slideshow"
-msgstr ""
+msgstr "توقف اسلایدشو"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
 msgid "&lsaquo; Previous Photo"
-msgstr ""
+msgstr "&lsaquo; تصویر قبلی"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
 msgid "Next Photo &rsaquo;"
-msgstr ""
+msgstr "تصویر بعدی &rsaquo;"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
 msgid "Next &rsaquo;"
-msgstr ""
+msgstr "بعدی &rsaquo;"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
 msgid "&lsaquo; Prev"
-msgstr ""
+msgstr "&lsaquo; قبلی"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
