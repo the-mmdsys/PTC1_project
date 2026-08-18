@@ -1,4 +1,4 @@
-from .models import OrderRequest, ContactWithUs
+from ..models import OrderRequest, ContactWithUs
 
 def create_order_request(*, full_name, company_name, activity_area, email, phone_number, message) -> OrderRequest:
     order = OrderRequest.objects.create(

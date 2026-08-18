@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from typing import Iterable, Any
+from typing import Any
 
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
     def __init__(self, *args: Any, **kwargs: Any) -> None:

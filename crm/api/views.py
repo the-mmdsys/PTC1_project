@@ -1,7 +1,7 @@
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from .serializers import OrderRequestSerializer, ContactWithUsSerializer
-from .. import services
+from . import services
 
 class OrderRequestViewSet(viewsets.ModelViewSet):
 

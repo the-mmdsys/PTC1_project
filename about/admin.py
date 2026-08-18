@@ -4,9 +4,10 @@ from .models import History, TeamMember
 
 @admin.register(History)
 class HistoryAdmin(TranslationAdmin):
-    list_display = ('title', 'date', 'created_at')
-    search_fields = ('title', 'achievement')
-    list_filter = ('date', 'created_at')
+    list_display = ('title', 'year','order', 'created_at')
+    list_editable = ('order',)  
+    search_fields = ('title', 'year')
+    list_filter = ('year', 'created_at', 'order')
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(TranslationAdmin):

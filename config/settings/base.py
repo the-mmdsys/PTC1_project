@@ -103,6 +103,7 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Docs For PTC project',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
+    'SCHEMA_PATH_PREFIX': r'^/(en|fa|ar)/api/',
 }
 
 CKEDITOR_UPLOAD_PATH = "uploads/"

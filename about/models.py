@@ -1,16 +1,18 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from core.models import BaseModel
 
-class History(BaseModel):
+from core.models import OrderBaseModel  
+
+class History(OrderBaseModel): 
     title = models.CharField(max_length=100, verbose_name="Title")
     achievement = models.TextField(verbose_name=_("Achievement"))
-    date = models.CharField(max_length=50, verbose_name="Year")
+    year = models.CharField(max_length=50, verbose_name="Year")
 
     class Meta:
         verbose_name = _("History")
         verbose_name_plural = _("Histories")
-        ordering = ['-created_at']
 
     def __str__(self):
         return self.title

@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from blog.api import selectors
 from .serializers import ArticleSerializer, CommentSerializer
-from blog import services
+from blog.api import services
 
 class ArticleViewSet(viewsets.ModelViewSet):
     http_method_names = ['get']
