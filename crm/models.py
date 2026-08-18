@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import FileExtensionValidator, RegexValidator
+from django.core.validators import RegexValidator
 from core.models import BaseModel
 from core.enums import ReviewStatus, ReadStatus
 from django.utils.translation import gettext_lazy as _

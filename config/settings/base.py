@@ -33,9 +33,9 @@ INTERNAL_IPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', 
+    'django.middleware.locale.LocaleMiddleware',            
+    'django.middleware.common.CommonMiddleware',            
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -83,6 +83,10 @@ LANGUAGES = (
     ('fa', _('Persian')),
     ('ar', _('Arabic')),
 )
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 # Static & Media files
 STATIC_URL = 'static/'

@@ -1,5 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
+from django.utils.translation import gettext_lazy as _
+
 from .models import History, TeamMember
 
 @admin.register(History)
