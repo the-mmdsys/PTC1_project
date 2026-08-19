@@ -1,0 +1,4 @@
+$kind: collection
+description: Docs For PTC project
+variables:
+  baseUrl: http://127.0.0.1:8000/fa

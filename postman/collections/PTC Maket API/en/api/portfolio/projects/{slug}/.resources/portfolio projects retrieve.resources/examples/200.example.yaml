@@ -1,0 +1,34 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/portfolio/projects/:slug/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  pathVariables:
+    slug: string
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "category": {
+          "id": 8037,
+          "title": "string",
+          "active_status": "active",
+          "logo": "https://tK.imilShK5cqsqHOtmR-f2qLW",
+          "order": 2663174235927841000
+        },
+        "id": 6984,
+        "title": "string",
+        "slug": "Znk",
+        "cover_image": "http://gZjIxgHcZSMbZpgwLMSeXxuE.pdom+RcYD5clzQs3T1lv,Hu,nOzeueRR"
+      }
+order: 1000

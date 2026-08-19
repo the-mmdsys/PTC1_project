@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/crm/contact-us/"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "5ud@wuwmKKPUWpfDfyWasOiKVstHh.jy",
+      "full_name": "string",
+      "message": "string",
+      "status": "read",
+      "subject": "string",
+      "created_at": 9583.278116683286,
+      "id": 517
+    }
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/crm contact us create.resources/examples
+order: 1000

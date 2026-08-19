@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/about/team-members/:id/"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  - key: id
+    value: "5151"
+    description: A unique integer value identifying this Team Member.
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/about team members retrieve.resources/examples
+order: 1000

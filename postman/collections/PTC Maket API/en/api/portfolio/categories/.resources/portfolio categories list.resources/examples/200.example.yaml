@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/portfolio/categories/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": 773,
+          "title": "string",
+          "active_status": "inactive",
+          "logo": "http://NxqDuABPypQcKqrKLLkM.ycfUZYO0G.HAGUoezSUQiV",
+          "order": 6173864616060747000
+        },
+        {
+          "id": 6534,
+          "title": "string",
+          "active_status": "active",
+          "logo": "https://KTbccBZU.rrKCdZwmQsgzvmHpcgvvfDmC.TjJj.qeilVg.e8+iwCTNTXbOfjt,VchoRZpa",
+          "order": 3464819205784293400
+        }
+      ]
+order: 1000

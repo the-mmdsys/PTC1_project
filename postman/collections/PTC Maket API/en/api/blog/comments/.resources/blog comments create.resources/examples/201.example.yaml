@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/blog/comments/"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  body:
+    type: json
+    content: |-
+      {
+        "article_id": 5318,
+        "full_name": "string",
+        "status": "approved",
+        "text": "string",
+        "created_at": 6029,
+        "id": 5511
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "created_at": "1957-02-16T11:27:04.156Z",
+        "full_name": "string",
+        "id": 9070,
+        "status": "pending",
+        "text": "string",
+        "article_id": 9199
+      }
+order: 1000

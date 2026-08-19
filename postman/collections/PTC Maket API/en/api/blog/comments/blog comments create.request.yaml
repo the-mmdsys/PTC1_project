@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/blog/comments/"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "article_id": 5318,
+      "full_name": "string",
+      "status": "approved",
+      "text": "string",
+      "created_at": 6029,
+      "id": 5511
+    }
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/blog comments create.resources/examples
+order: 1000

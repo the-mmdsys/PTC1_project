@@ -1,0 +1,44 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/crm/order-request/"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  body:
+    type: json
+    content: |-
+      {
+        "email": "S9bBEQ@HbCPpWdVrDaGlhyjBYlAzwotnPDyLQjY.nno",
+        "full_name": "string",
+        "message": "string",
+        "phone_number": "+6003289952",
+        "status": "reviewed",
+        "company_name": "string",
+        "activity_area": "string"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "created_at": "1970-09-15T15:43:30.634Z",
+        "email": "33vc@dHDxGC.obb",
+        "full_name": "string",
+        "id": 326,
+        "message": "string",
+        "phone_number": "18049805003570",
+        "status": "reviewed",
+        "company_name": "string",
+        "activity_area": "string"
+      }
+order: 1000

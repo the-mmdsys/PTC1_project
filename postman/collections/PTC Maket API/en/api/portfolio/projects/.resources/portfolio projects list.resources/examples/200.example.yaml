@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/portfolio/projects/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "category": {
+            "id": 4830,
+            "title": "string",
+            "active_status": "inactive",
+            "logo": "https://e.miHc1fZifSMN6iqWPqAUD.j,ZKmBVzZBqPud,z9GNQrWOPB+",
+            "order": 1745177887747204000
+          },
+          "id": 76,
+          "title": "string",
+          "slug": "I",
+          "cover_image": "https://p.txQmFf7jze+fkame25TYknsMqki3uDbG."
+        },
+        {
+          "category": {
+            "id": 4795,
+            "title": "string",
+            "active_status": "active",
+            "logo": "http://zQIWOs.pdYmDu-UgDRMXeDIJjpOwPdqUNe3exDiDgc0xT8G5Ra,kJp4qwTPPXM",
+            "order": 613462817900456000
+          },
+          "id": 557,
+          "title": "string",
+          "slug": "2LU8t0",
+          "cover_image": "https://KOztjjTLVFyZWcxnEMcfVcPoQGjL.cjnh-03h7eK"
+        }
+      ]
+order: 1000

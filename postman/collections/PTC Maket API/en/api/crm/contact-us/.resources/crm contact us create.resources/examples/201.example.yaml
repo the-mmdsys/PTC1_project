@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/crm/contact-us/"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  body:
+    type: json
+    content: |-
+      {
+        "email": "5ud@wuwmKKPUWpfDfyWasOiKVstHh.jy",
+        "full_name": "string",
+        "message": "string",
+        "status": "read",
+        "subject": "string",
+        "created_at": 9583.278116683286,
+        "id": 517
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "created_at": "1989-11-26T06:44:34.162Z",
+        "email": "FtI70fO@ONzYnpZQXlUZQQUserhHFwc.jhb",
+        "full_name": "string",
+        "id": 1062,
+        "message": "string",
+        "status": "read",
+        "subject": "string"
+      }
+order: 1000

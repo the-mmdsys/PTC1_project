@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/blog/articles/:slug/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  pathVariables:
+    slug: string
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "created_at": "1994-03-15T22:54:22.628Z",
+        "id": 32,
+        "title": "string",
+        "slug": "tqQx",
+        "category": 5351,
+        "cover_image": "http://lDFLDGlWCCIsAihFXHKhDyAm.hcrkVOYm0i,Sve+RewPUVHwKehVLMZnXNf-pFSIUxxfiLsa.7EWE,l,k-AzB-nlrnKUtbotoVK",
+        "description": "string",
+        "summary": "string"
+      }
+order: 1000

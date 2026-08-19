@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/about/team-members/"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/about team members list.resources/examples
+order: 2000

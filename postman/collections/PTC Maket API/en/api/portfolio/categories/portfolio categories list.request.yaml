@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/portfolio/categories/"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/portfolio categories list.resources/examples
+order: 2000

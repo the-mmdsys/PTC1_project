@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/about/team-members/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "full_name": "string",
+          "id": 4754,
+          "position": "string",
+          "image": "https://rHVfrjzpvnIPOgPaHztABCqBUCw.jafvFy8gLU6OGsBq3kwiXwoHDS"
+        },
+        {
+          "full_name": "string",
+          "id": 2530,
+          "position": "string",
+          "image": "http://bHPCEKeKZOkPYE.bevsRiNvmvEfkg+mNpG+YndN8HkNNYqRr4"
+        }
+      ]
+order: 1000

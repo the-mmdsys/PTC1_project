@@ -1,0 +1,579 @@
+openapi: 3.0.3
+info:
+  title: PTC Maket API
+  version: 1.0.0
+  description: Docs For PTC project
+paths:
+  /en/api/about/history/:
+    get:
+      operationId: about_history_list
+      tags:
+      - about
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/History'
+          description: ''
+  /en/api/about/history/{id}/:
+    get:
+      operationId: about_history_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this History.
+        required: true
+      tags:
+      - about
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/History'
+          description: ''
+  /en/api/about/team-members/:
+    get:
+      operationId: about_team_members_list
+      tags:
+      - about
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeamMember'
+          description: ''
+  /en/api/about/team-members/{id}/:
+    get:
+      operationId: about_team_members_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Team Member.
+        required: true
+      tags:
+      - about
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMember'
+          description: ''
+  /en/api/blog/articles/:
+    get:
+      operationId: blog_articles_list
+      tags:
+      - blog
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
+          description: ''
+  /en/api/blog/articles/{slug}/:
+    get:
+      operationId: blog_articles_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - blog
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+          description: ''
+  /en/api/blog/comments/:
+    post:
+      operationId: blog_comments_create
+      tags:
+      - blog
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Comment'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Comment'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: ''
+  /en/api/crm/contact-us/:
+    post:
+      operationId: crm_contact_us_create
+      tags:
+      - crm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactWithUs'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ContactWithUs'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ContactWithUs'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactWithUs'
+          description: ''
+  /en/api/crm/order-request/:
+    post:
+      operationId: crm_order_request_create
+      tags:
+      - crm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderRequest'
+          description: ''
+  /en/api/portfolio/categories/:
+    get:
+      operationId: portfolio_categories_list
+      tags:
+      - portfolio
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+          description: ''
+  /en/api/portfolio/categories/{id}/:
+    get:
+      operationId: portfolio_categories_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Category.
+        required: true
+      tags:
+      - portfolio
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+          description: ''
+  /en/api/portfolio/projects/:
+    get:
+      operationId: portfolio_projects_list
+      tags:
+      - portfolio
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+          description: ''
+  /en/api/portfolio/projects/{slug}/:
+    get:
+      operationId: portfolio_projects_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+          title: Slug (URL)
+        required: true
+      tags:
+      - portfolio
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+          description: ''
+components:
+  schemas:
+    ActiveStatusEnum:
+      enum:
+      - active
+      - inactive
+      type: string
+      description: |-
+        * `active` - فعال
+        * `inactive` - غیرفعال
+    Article:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        slug:
+          oneOf:
+          - type: string
+            pattern: ^[-\w]+$
+            maxLength: 200
+          - type: string
+            maxLength: 0
+        title:
+          type: string
+          maxLength: 200
+        category:
+          type: integer
+          nullable: true
+        cover_image:
+          type: string
+          format: uri
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        summary:
+          type: string
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - title
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 100
+        active_status:
+          $ref: '#/components/schemas/ActiveStatusEnum'
+        logo:
+          type: string
+          format: uri
+          nullable: true
+        order:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+          title: Display Order
+      required:
+      - id
+      - title
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        article_id:
+          type: integer
+          writeOnly: true
+        full_name:
+          type: string
+          maxLength: 100
+        text:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/CommentStatusEnum'
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - article_id
+      - created_at
+      - full_name
+      - id
+      - status
+      - text
+    CommentStatusEnum:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
+      description: |-
+        * `pending` - در انتظار تأیید
+        * `approved` - تأیید شده
+        * `rejected` - رد شده
+    ContactWithUs:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_name:
+          type: string
+          maxLength: 100
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        subject:
+          type: string
+          maxLength: 200
+        message:
+          type: string
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ContactWithUsStatusEnum'
+          readOnly: true
+          title: Read Status
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - email
+      - full_name
+      - id
+      - message
+      - status
+      - subject
+    ContactWithUsStatusEnum:
+      enum:
+      - unread
+      - read
+      type: string
+      description: |-
+        * `unread` - خوانده نشده
+        * `read` - خوانده شده
+    History:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 100
+        year:
+          type: string
+          maxLength: 50
+      required:
+      - id
+      - title
+      - year
+    OrderRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_name:
+          type: string
+          maxLength: 100
+        company_name:
+          type: string
+          nullable: true
+          maxLength: 150
+        activity_area:
+          type: string
+          nullable: true
+          maxLength: 100
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        phone_number:
+          type: string
+          pattern: ^\+?1?\d{9,15}$
+          maxLength: 20
+        message:
+          type: string
+          title: Order Description
+        status:
+          allOf:
+          - $ref: '#/components/schemas/OrderRequestStatusEnum'
+          readOnly: true
+          title: Review Status
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - email
+      - full_name
+      - id
+      - message
+      - phone_number
+      - status
+    OrderRequestStatusEnum:
+      enum:
+      - pending
+      - reviewed
+      - rejected
+      type: string
+      description: |-
+        * `pending` - در حال بررسی
+        * `reviewed` - بررسی شده
+        * `rejected` - رد شده
+    Project:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          title: Project Title
+          maxLength: 100
+        slug:
+          title: Slug (URL)
+          oneOf:
+          - type: string
+            pattern: ^[-\w]+$
+            maxLength: 100
+          - type: string
+            maxLength: 0
+        cover_image:
+          type: string
+          format: uri
+          nullable: true
+        category:
+          allOf:
+          - $ref: '#/components/schemas/Category'
+          readOnly: true
+      required:
+      - category
+      - id
+      - title
+    TeamMember:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        full_name:
+          type: string
+          title: Name
+          maxLength: 100
+        position:
+          type: string
+          title: Role
+          maxLength: 100
+        image:
+          type: string
+          format: uri
+          nullable: true
+          title: Profile Image
+      required:
+      - full_name
+      - id
+      - position
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

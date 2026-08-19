@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/portfolio/categories/:id/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  pathVariables:
+    - key: id
+      value: "5151"
+      description: A unique integer value identifying this Category.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id": 3939,
+        "title": "string",
+        "active_status": "active",
+        "logo": "http://oMQYgibPZlTVUShyIZkQlThQT.hhnsgMOmBbeaqE5AL7ndcv.A9fch",
+        "order": 5562995889734506000
+      }
+order: 1000

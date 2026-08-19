@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/portfolio/projects/:slug/"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  slug: string
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/portfolio projects retrieve.resources/examples
+order: 1000

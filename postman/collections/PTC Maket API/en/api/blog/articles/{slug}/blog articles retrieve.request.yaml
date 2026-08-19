@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/blog/articles/:slug/"
+method: GET
+headers:
+  Accept: application/json
+pathVariables:
+  slug: string
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/blog articles retrieve.resources/examples
+order: 1000

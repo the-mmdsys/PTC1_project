@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/en/api/blog/articles/"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: sessionid
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "created_at": "1990-05-23T14:16:15.566Z",
+          "id": 5825,
+          "title": "string",
+          "slug": "l5",
+          "category": 6903,
+          "cover_image": "https://SWkYybPILHZjrdrXYVd.qssB4i90uSfiEPMiA8uUMKQU88bZKPK94+PoxcLsLRv8D4FobxxiVsBaXc9",
+          "description": "string",
+          "summary": "string"
+        },
+        {
+          "created_at": "1969-10-19T12:37:57.584Z",
+          "id": 5779,
+          "title": "string",
+          "slug": "XmA1q",
+          "category": 6002,
+          "cover_image": "https://ksCExyFPmzEHxxkqaB.nktVi2oZ.HzZUmet.vNXRkfqUsP6iu4RHVhfZHWFSa6NQnoJw6csE5eoIo,iKD",
+          "description": "string",
+          "summary": "string"
+        }
+      ]
+order: 1000

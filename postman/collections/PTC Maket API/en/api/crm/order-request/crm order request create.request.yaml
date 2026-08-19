@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{baseUrl}}/en/api/crm/order-request/"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "S9bBEQ@HbCPpWdVrDaGlhyjBYlAzwotnPDyLQjY.nno",
+      "full_name": "string",
+      "message": "string",
+      "phone_number": "+6003289952",
+      "status": "reviewed",
+      "company_name": "string",
+      "activity_area": "string"
+    }
+auth:
+  type: apikey
+  credentials:
+    key: sessionid
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/crm order request create.resources/examples
+order: 1000
