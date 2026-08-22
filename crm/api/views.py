@@ -1,9 +1,11 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, mixins
 from rest_framework.response import Response
 from .serializers import OrderRequestSerializer, ContactWithUsSerializer
 from . import services
 
-class OrderRequestViewSet(viewsets.ModelViewSet):
+class OrderRequestViewSet(mixins.CreateModelMixin, 
+                          mixins.ListModelMixin, 
+                          viewsets.GenericViewSet):
 
     http_method_names = ['post'] 
     serializer_class = OrderRequestSerializer
